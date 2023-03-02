@@ -13,7 +13,7 @@ int main()
         if (a[i] < min)min = a[i];
 
     }
-    cout << "maximun:" << fixed << setprecision(2) << max << endl;
-    cout << "maximun:" << fixed << setprecision(2) << min << endl;
+    cout << "maximum:" << fixed << setprecision(2) << max << endl;
+    cout << "maximum:" << fixed << setprecision(2) << min << endl;
     return 0;
 }
