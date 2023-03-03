@@ -1,24 +1,14 @@
 ﻿#include<iostream>
-#include<iomanip>
+#include <bitset>
 using namespace std;
 
 int main()
 {
-    int inx, iny;
-    int outx, outy;
+    int x;
     
-    cin >> inx >> iny;
-    cin >> outx >> outy;
-    int time = (outx * 60 + outy) - (inx * 60 + iny);
-    if(time<=120 && time>=0){
-        cout << time / 30 * 30 << endl;
+    while (cin >> x) {
+        cout << bitset<8>(x) << endl;
+
     }
-    else if(time>120 && time<=240){
-        cout << (time-120) / 30 * 40+120 << endl;
-    }
-    else {
-        cout << (time - 240) / 30 * 60 + 120 + 160<< endl;
-    }
-    
         return 0;
 }
