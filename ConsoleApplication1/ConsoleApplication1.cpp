@@ -6,9 +6,29 @@ int main()
 {
     int x;
     
-    while (cin >> x) {
-        cout << bitset<8>(x) << endl;
-
+    cout << "請輸入月份: ";
+    cin >> x;
+    switch ( x ) {
+    case 1:
+    case 2:
+    case 3:
+        cout << "Spring" << endl;
+        break;
+    case 4:
+    case 5:
+    case 6:
+        cout << "Summer" << endl;
+        break;
+    case 7:
+    case 8:
+    case 9:
+        cout << "Autumn" << endl;
+        break;
+    case 10:
+    case 11:
+    case 12:
+        cout << "Winter" << endl;
+        break;
     }
-        return 0;
+    return 0;
 }
