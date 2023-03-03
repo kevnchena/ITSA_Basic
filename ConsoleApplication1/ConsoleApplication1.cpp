@@ -29,6 +29,8 @@ int main()
     case 12:
         cout << "Winter" << endl;
         break;
+    default:
+        cout << "retry again!" << endl;
     }
     return 0;
 }
