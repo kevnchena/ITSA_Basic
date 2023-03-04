@@ -6,12 +6,12 @@ int main()
 {
     int x;
     
-    cin >> x;
+    cin >> x;//執行次數
     while ( x-- ) {
 
         char f;
         int a, b, c, d;
-        cin >> f >> a >> b >> c >> d;
+        cin >> f >> a >> b >> c >> d; //運算元>>a,ai  b,bi
         switch(f){
             
         case'+':
@@ -21,10 +21,10 @@ int main()
             cout << a - c << " " << b - d << endl;
             break;
         case'*':
-            cout << a*c - b*d << " " << a*d + b*c << endl;
+            cout << a*c - b*d << " " << b*c + a*d << endl;
             break;
         case'/':
-            cout << (a*c + b*d)/(c*c + b*b) << " " << (b*c + a*d) / (c*c + b*b) << endl;
+            cout << (a*c + b*d)/(c*c + b*b) << " " << (b*c - a*d) / (c*c + b*b) << endl;
             break;
 
         }
