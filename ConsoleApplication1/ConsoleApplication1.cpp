@@ -7,28 +7,28 @@ int main()
     int x;
     
     cin >> x;
-    switch ( x ) {
-    case 3:
-    case 4:
-    case 5:
-        cout << "Spring" << endl;
-        break;
-    case 6:
-    case 7:
-    case 8:
-        cout << "Summer" << endl;
-        break;
-    case 9:
-    case 10:
-    case 11:
-        cout << "Autumn" << endl;
-        break;
-    case 12:
-    case 1:
-    case 2:
-        cout << "Winter" << endl;
-        break;
+    while ( x-- ) {
 
+        char f;
+        int a, b, c, d;
+        cin >> f >> a >> b >> c >> d;
+        switch(f){
+            
+        case'+':
+            cout << a + c << " " << b + d << endl;
+            break;
+        case'-':
+            cout << a - c << " " << b - d << endl;
+            break;
+        case'*':
+            cout << a*c - b*d << " " << a*d + b*c << endl;
+            break;
+        case'/':
+            cout << (a*c + b*d)/(c*c + b*b) << " " << (b*c + a*d) / (c*c + b*b) << endl;
+            break;
+
+        }
+    
     }
     return 0;
 }
