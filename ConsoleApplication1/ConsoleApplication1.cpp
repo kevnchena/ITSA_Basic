@@ -4,15 +4,12 @@ using namespace std;
 
 int main()
 {
-    int n,a;
+    int n;
     int ans = 1;
-    a = 2;
+    ;
     cin >> n;
-    while (a < n) {
-        if (n % a == 0) {
-            ans = 0;
-        }
-        a++;
+    for (int i = 2; i < n; i++) {
+        if (n % i == 0)ans = 0;
     }
     if (ans == 1)
         cout << "YES" << endl;
