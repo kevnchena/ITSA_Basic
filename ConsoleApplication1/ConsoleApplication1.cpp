@@ -6,7 +6,6 @@ int main()
 {
     int x;
     
-    cout << "請輸入月份: ";
     cin >> x;
     switch ( x ) {
     case 3:
@@ -29,8 +28,7 @@ int main()
     case 2:
         cout << "Winter" << endl;
         break;
-    default:
-        cout << "retry again!" << endl;
+
     }
     return 0;
 }
