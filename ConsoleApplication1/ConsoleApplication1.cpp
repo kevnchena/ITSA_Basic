@@ -3,15 +3,25 @@ using namespace std;
 
 int main()
 {
-    int n;
-    int sum = 0;
-    ;
-    cin >> n;
-    for (int i = 3; i <= n; i++) {
-        if (i % 3 == 0)
-            sum += i;
+    int col, row;
+    int *a;
+    int count = 0;
+    cin >> col >> row;
+    a=new int[col*row];
+ 
+    for (int i = 0; i < (col*row); i++) {
+       cin >> a[i];
     }
-    cout << sum << endl;
+    for (int i = 0; i < row; i++) {
 
+        for (int j = 0; j < col; j++) {
+            count++;
+                cout << a[j * row + i];
+                if (count % col != 0)cout << " ";
+        }
+        cout << endl;
+    }
+   
+    delete []a;
     return 0;
 }
