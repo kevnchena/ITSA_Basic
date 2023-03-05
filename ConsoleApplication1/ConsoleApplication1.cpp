@@ -1,15 +1,14 @@
 ﻿#include<iostream>  
-#include<iomanip>  
+#include <bitset>  
 using namespace std;
 
 int main()
 {
-    int x, y;
-    while (cin >> x >> y) {
-        if (x * x + y * y <= 10000)
-            cout << "inside" << endl;
-        else
-            cout << "outside" << endl;
+    int x;
+
+    while (cin >> x) {
+        cout << bitset<8>(x) << endl;
+
     }
     return 0;
 }
