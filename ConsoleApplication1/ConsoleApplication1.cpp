@@ -1,14 +1,17 @@
 ﻿#include<iostream>  
-#include <bitset>  
 using namespace std;
 
 int main()
 {
-    int x;
-
-    while (cin >> x) {
-        cout << bitset<8>(x) << endl;
-
+    int n;
+    int sum = 0;
+    ;
+    cin >> n;
+    for (int i = 3; i <= n; i++) {
+        if (i % 3 == 0)
+            sum += i;
     }
+    cout << sum << endl;
+
     return 0;
 }
