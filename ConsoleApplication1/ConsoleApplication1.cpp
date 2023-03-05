@@ -4,17 +4,13 @@ using namespace std;
 
 int main()
 {
-    int n;
-    int ans = 1;
-    ;
-    cin >> n;
-    for (int i = 2; i < n; i++) {
-        if (n % i == 0)ans = 0;
+    int a,b;
+    cin >> a >> b;
+    while (a != 0 && b != 0) {
+        if (a > b) a = a % b;
+        else b = b % a;
     }
-    if (ans == 1)
-        cout << "YES" << endl;
-    else
-        cout << "NO" << endl;
-
+    if (a >= b) cout << a << endl;
+    else cout << b << endl;
     return 0;
 }
