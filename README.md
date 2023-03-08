@@ -34,6 +34,18 @@
 
 ## 解答
 
+複數運算
+
+加法: (a + bi) + (c + di) = (a + c) + (b + d)i
+
+減法: (a + bi) − (c + di) = (a − c) + (b − d)i
+
+乘法: (a + bi)(c + di) = (ac − bd) + (bc + ad)i
+
+除法:(a+bi)/(c+di) =(ac + bd)/(c^2 + d^2)+(bc - ad) / (c^2 + b^2)i
+
+
+
 ```
 #include<iostream>
 using namespace std;
@@ -60,7 +72,7 @@ int main()
             cout << a*c - b*d << " " << b*c + a*d << endl;
             break;
         case'/':
-            cout << (a*c + b*d)/(c*c + b*b) << " " << (b*c - a*d) / (c*c + b*b) << endl;
+            cout << (a*c + b*d)/(c&sup2 + b*b) << " " << (b*c - a*d) / (c*c + b*b) << endl;
             break;
 
         }
