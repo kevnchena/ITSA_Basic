@@ -28,16 +28,19 @@ NO
 
 ```
 #include<iostream>
-using namespace std; 
+using namespace std;
 
 int main()
 {
-    int n;
+    int n,a;
     int ans = 1;
-    ;
+    a = 2; 
     cin >> n;
-    for (int i = 2; i < n; i++) {
-        if (n % i == 0)ans = 0;
+    while (a < n) { //提前宣告a當條件
+        if (n % a == 0) {
+            ans = 0;
+        }
+        a++;
     }
     if (ans == 1)
         cout << "YES" << endl;
