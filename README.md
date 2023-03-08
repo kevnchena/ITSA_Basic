@@ -31,7 +31,7 @@ int main()
       
     cin >> inx >> iny;  
     cin >> outx >> outy;  
-    int time = (outx * 60 + outy) - (inx * 60 + iny);  
+    int time = (outx * 60 + outy) - (inx * 60 + iny);  //把時間單位統一
     if(time<=120 && time>=0){  
         cout << time / 30 * 30 << endl;  
     }  
