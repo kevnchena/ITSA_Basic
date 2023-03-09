@@ -19,27 +19,32 @@
 340
 
 ### 解答
+
+依序輸入進場時間、出場時間
+
+把時間都換算成分鐘後再來計算費率
+
 ```
 #include<iostream>  
-#include<iomanip>  
+  
 using namespace std;  
   
 int main()  
 {  
-    int inx, iny;  
+    int inx, iny;  // 小時:分鐘
     int outx, outy;  
       
-    cin >> inx >> iny;  
-    cin >> outx >> outy;  
-    int time = (outx * 60 + outy) - (inx * 60 + iny);  //把時間單位統一
-    if(time<=120 && time>=0){  
+    cin >> inx >> iny;  // 入場時間
+    cin >> outx >> outy; // 出場時間 
+    int time = (outx * 60 + outy) - (inx * 60 + iny);  //把時間單位統一為分鐘後相減
+    if(time<=120 && time>=0){  // 0~120 分鐘的費率
         cout << time / 30 * 30 << endl;  
     }  
     else if(time>120 && time<=240){  
-        cout << (time-120) / 30 * 40+120 << endl;  
+        cout << (time-120) / 30 * 40+120 << endl;  // 120分鐘後的費率 + 120元(2小時以內的費用)
     }  
     else {  
-        cout << (time - 240) / 30 * 60 + 120 + 160<< endl;  
+        cout << (time - 240) / 30 * 60 + 120 + 160<< endl;  // 240分鐘後的費率 + 280元(4小時以內的費用)
     }  
       
         return 0;  
