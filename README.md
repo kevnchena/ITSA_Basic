@@ -24,16 +24,26 @@ inside
 outside
 
 解答
+
+要查出點有沒有在園內，先確定有沒有超出圓面積
+
+圓形的面積是 r * r * π  
+
+以(0,0)為中心，用(x,y)去找半徑的話是 x^2+y^2=r^2
+
+題目直徑為200，半徑為100，r^2為10000
+
+ 
 ```
 #include<iostream>  
-#include<iomanip>  
+ 
 using namespace std;
 
 int main()
 {
     int x, y;
     while (cin >> x >> y) {
-        if (x * x + y * y <= 10000)
+        if (x * x + y * y <= 10000) 
             cout << "inside" << endl;
         else
             cout << "outside" << endl;
