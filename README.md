@@ -20,6 +20,8 @@
 
 ### 解答
 
+運用while可以不關終端機，重複輸入
+setprecision控制只到小數點後1位
 ```
 #include<iostream>
 #include<iomanip>
