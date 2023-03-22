@@ -4,7 +4,7 @@
 
 ### 給定下列遞迴函式 :
 
-![image](picture or gif url)
+![image](https://github.com/kevnchena/ITSA_Basic/blob/12/C_RU06.JPG)
 
 請計算出 f (k) 。
 
