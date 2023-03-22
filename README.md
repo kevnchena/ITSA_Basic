@@ -50,7 +50,10 @@
 9 22  
 10 4  
 4 2 4 6  
-5 3 5 9  
+5 3 5 9
+## 解答
+
+使用一維陣列去實現
 ```
 #include<iostream>    
 using namespace std;  
@@ -73,7 +76,7 @@ int main()
                 cout << a[j * row + i];  
                 if (count % col != 0)cout << " ";  
         }  
-        cout << endl;  
+        cout << endl;  //換行
     }  
      
     delete []a;  
