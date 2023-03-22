@@ -21,6 +21,8 @@
 YES  
 YES  
 NO  
+
+## 解答
 ```
 view plainprint?
 #include<iostream>  
