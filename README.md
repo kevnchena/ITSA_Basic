@@ -4,7 +4,7 @@
 
 ### 給定下列遞迴函式 :
 
-C_RU06.JPG
+![image](picture or gif url)
 
 請計算出 f (k) 。
 
@@ -33,6 +33,8 @@ Sample Input
 Sample Output  
 
 94
+
+## 解答
 
 ```
 #include<iostream>  
