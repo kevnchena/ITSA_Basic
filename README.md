@@ -27,8 +27,8 @@ int main()
 {  
     int a,b;  
     cin >> a >> b;  
-    while (a != 0 && b != 0) {  
-        if (a > b) a = a % b;  
+    while (a != 0 && b != 0) { 
+        if (a > b) a = a % b;  //if迴圈確定大除小的關係
         else b = b % a;  
     }  
     if (a >= b) cout << a << endl;  
