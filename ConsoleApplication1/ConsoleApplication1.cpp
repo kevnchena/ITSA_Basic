@@ -4,22 +4,18 @@ using namespace std;
 
 int main()
 {
-    int a, b;
-    string str;
-    while (getline(cin, str))
-    {
-        b = 1;
-        a = str.length();
-        for (int i = 0; i < a / 2; i++)
-        {
-            if (str[i] != str[a - i - 1])
-            {
-                b = 0;
-                break;
-            }
-        }
-        if (b == 1 && a != NULL)cout << "YES" << endl;
-        else cout << "NO" << endl;
+    int number;
+
+    cin >> number;
+    string str =to_string(number);
+    string newstring;
+
+    for (int i = str.length() - 1; i >= 0; i--) {
+
+        newstring.push_back(str[i]);
     }
+    if (newstring == str)cout << "YES" << endl;
+    else cout << "NO" << endl;
     return 0;
+
 }
