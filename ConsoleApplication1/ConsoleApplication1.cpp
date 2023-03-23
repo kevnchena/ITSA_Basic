@@ -1,26 +1,25 @@
-﻿#include<iostream>
-#include<string>
+﻿#include<iostream>  
+#include<string>  
 using namespace std;
 
 int main()
 {
-	string input, output;
-	bool a = 1;
-
-	cin >> input;
-	int t = input.length()-1;
-	int count = 0;
-	for (int i = t; i >= 0; i--)//將字串逆序傳到output 
-	{	
-		output[count] = input[i];
-		count++;
-	}
-	for (int j = 0; j < t; j++)//比較是否有異 
-	{
-		if (input[j] != output[j]) { a = 0; break; }//發現有異即時跳出 
-		else a = 1;
-	}
-	a ? cout << "YES" << endl : cout << "NO" << endl;//輸出結果 
-	return 0;
-
+    int a, b;
+    string str;
+    while (getline(cin, str))
+    {
+        b = 1;
+        a = str.length();
+        for (int i = 0; i < a / 2; i++)
+        {
+            if (str[i] != str[a - i - 1])
+            {
+                b = 0;
+                break;
+            }
+        }
+        if (b == 1 && a != NULL)cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
+    return 0;
 }
