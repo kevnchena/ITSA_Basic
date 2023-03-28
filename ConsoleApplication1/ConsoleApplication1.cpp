@@ -28,8 +28,8 @@ int main()
 		for (int j = 0; j < 52; j++)
 		{
 			for (map<char, int>::iterator p = F.begin(); p != F.end(); p++) {
-				if (F[j] == p->first && p->second != 0) {
-					cout<< p->first << " : " << p->second << endl;
+				if (F[j] == (*p).first && (*p).second != 0) {
+					cout<< (*p).first << " : " << (*p).second << endl;
 				};
 			};
 		};
