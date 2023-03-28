@@ -1,27 +1,37 @@
 ﻿#include<iostream>
 #include<sstream>
 #include<string>
-#include<vector>
+#include<map>
 using namespace std;
 
-void sort(vector<string>)
 
 int main()
 {
-	int n;
-	vector<string> splitsort[100];
-	string input[100];
-	cin.ignore();
-	
-		for (int i = 0; i < strlen(input); i++)
+	string input, sort;
+	int count = 0;
+	map<char, int> F;
+	string w = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+
+	getline(cin, input);
+	istringstream split(input);
+	while (getline(split, sort, ' ')) { //分割字串執行
+
+		count++;//計算字串數
+		for (int i = 0; i < sort.length(); i++)
 		{
-
-
-			getline(cin, splitsort);
-
-
-
-		}
-	
-
+			if (F.count(sort[i] == 0)) { F.insert(make_pair(sort[i], 1)); }  //F.insert(<pair<char,int>(sort[i],1))
+			//make_pair可以省略寫類型
+			else F[sort[i]] += 1;
+		};
+	};
+		cout << count << endl;//輸出字串分割段數
+		for (int j = 0; j < 52; j++)
+		{
+			for (map<char, int>::iterator p = F.begin(); p != F.end(); p++) {
+				if (F[j] == p->first && p->second != 0) {
+					cout<< p->first << " : " << p->second << endl;
+				};
+			};
+		};
 }
+
