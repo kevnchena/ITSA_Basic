@@ -10,7 +10,7 @@ int main()
 	string input, sort;
 	int count = 0;
 	map<char, int> F;
-	string w = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+	string Englishword = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 
 	getline(cin, input);
 	istringstream split(input);
@@ -28,7 +28,7 @@ int main()
 		for (int j = 0; j < 52; j++)
 		{
 			for (map<char, int>::iterator p = F.begin(); p != F.end(); p++) {
-				if (F[j] == (*p).first && (*p).second != 0) {
+				if (Englishword[j] == (*p).first && (*p).second != 0) {
 					cout<< (*p).first << " : " << (*p).second << endl;
 				};
 			};
