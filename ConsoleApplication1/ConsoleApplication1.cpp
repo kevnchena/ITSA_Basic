@@ -5,22 +5,33 @@
 #include<vector>
 using namespace std;
 
+string checked(const string& obj) {//檢查有沒有超過1000字元
+	if (obj.size() <= 1000)
+		return obj;
+	else
+		return "";
+}
 
 int main()
-{
-	string input,sort;
+{	
+
+	string input, sort, output;
 	vector<string> container;
 	getline(cin, input);
 	transform(input.begin(), input.end(), input.begin(), ::tolower);
 
-	istringstream str(input);
+	string checked(input);
 
+	istringstream str(checked);
 	
+	
+
 	while (getline(str,sort,' ')) {//分割成每碰到一個' '輸入一段字串
 		container.push_back(sort);
 	}
 
 	int limiter = container.size();
+	int count = container.size()-1;//計算要幾個空白
 
 	for (int i = 0; i < limiter; i++) {
 		
@@ -29,14 +40,16 @@ int main()
 			if (container[i] == container[j]) {
 				
 				container[j].clear();//有就把當下的刪除
+				count--;
 			};
 		};
 		
-		cout << container[i];
-		if (container[i].compare("")!=0)cout << " ";//如果comtaimer[i]內的值不相等(!=0)才輸出
-		//if (count >0)cout << container[i] << " ";
+		if (!container[i].empty()) {//如果comtaimer[i]內值不空
+			cout << container[i];
+			if (i < count)cout << " ";
+		};
 		
 	};
-	cout << endl;
+	//cout << endl;	
 	return 0;
 }
