@@ -11,7 +11,7 @@ int main()
 	string input,sort;
 	vector<string> container;
 	getline(cin, input);
-	transform(input.begin(), input.end(), input.begin(), tolower);
+	transform(input.begin(), input.end(), input.begin(), ::tolower);
 
 	istringstream str(input);
 
