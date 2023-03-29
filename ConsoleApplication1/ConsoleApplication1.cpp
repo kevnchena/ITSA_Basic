@@ -31,7 +31,7 @@ int main()
 	}
 
 	int limiter = container.size();
-	int count = container.size()-1;//計算要幾個空白
+	int count = container.size()-1;//計算要幾個空白 尾巴-1
 
 	for (int i = 0; i < limiter; i++) {
 		
@@ -46,7 +46,7 @@ int main()
 		
 		if (!container[i].empty()) {//如果comtaimer[i]內值不空
 			cout << container[i];
-			if (i < count)cout << " ";
+			if (i < count)cout << " ";//i<計算次數就不再輸出空白
 		};
 		
 	};
