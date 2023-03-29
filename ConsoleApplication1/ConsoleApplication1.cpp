@@ -32,24 +32,31 @@ int main()
 
 	int limiter = container.size();
 	int count = container.size() - 1;//計算要幾個空白 尾巴-1
+	int flag = 0;
 
-	for (int i = 0; i < limiter; i++) {
+	for (int i = 0; i < limiter; i++) 
+	{
 
 
-		for (int j = i + 1; j < limiter; j++) {//比較元素有沒有相等
-			if (container[i] == container[j]) {
+		for (int j = i + 1; j < limiter; j++)//比較元素有沒有相等
+		{
+			if (container[i] == container[j] && !container[j].empty()) 
+			{
 
 				container[j].clear();//有就把當下的刪除
 				count--;
 			};
 		};
 
-		if (!container[i].empty()) {//如果comtaimer[i]內值不空
-			cout << container[i];
-			if (i < count)cout << " ";//i<計算次數就不再輸出空白
-		};
-
 	};
-	//cout << endl;	
+	for (int k = 0; k < limiter; k++) 
+	{
+		if (!container[k].empty()) {
+			flag++;
+			cout << container[k];//如果comtaimer[i]內值不空
+			if (flag <= count)cout << " ";//i<計算次數就不再輸出空白
+		};
+	};
+	cout << endl;	
 	return 0;
 }
