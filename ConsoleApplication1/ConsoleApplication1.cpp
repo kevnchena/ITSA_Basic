@@ -1,6 +1,5 @@
 ﻿#include<iostream>
 #include<string>
-#include<map>
 #include<sstream>
 #include<algorithm>
 #include<vector>
@@ -11,11 +10,15 @@ int main()
 {
 	string input;
 	vector<string> container;
+	getline(cin, input);
+	transform(input.begin(), input.end(), input.begin(), tolower);
+
 	istringstream str(input);
+
 	
-	while (getline(cin, input)) {
+	for (int i = 0;i<input.size();i++) {
 		container.push_back(input);
 	}
-	cout << container << endl;
-	break;
+	cout << container[0] << endl;
+
 }
