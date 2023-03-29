@@ -1,14 +1,27 @@
 ﻿#include<iostream>
 #include<string>
-#include<map>
+
 using namespace std;
 
 int main()
 {
-	string input, compare;
+	string input, input2;
 	
 	getline(cin, input);
-	getline(cin, compare);
-	map<string, int> str1 = { input,1 };
+	getline(cin, input2);
 	
+	string::size_type pos = 0;
+	int count=0;
+	if (input.length() < 128 && input2.length() < 512) {
+		while ((pos = input2.find(input, pos)) != string::npos)
+		{
+			pos++;
+			count++;
+
+		}
+
+		cout << count << endl;
+		return 0;
+	}
+	else return 0;
 }
