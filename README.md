@@ -24,7 +24,7 @@ how do you
 
 ## 解答
 
-使
+
 
 ```
 #include<iostream>
@@ -72,7 +72,7 @@ int main()
 			if (container[i] == container[j] && !container[j].empty()) 
 			{
 
-				container[j].clear();//有就把當下的刪除
+				container[j].clear();//有就把j當下的刪除
 				count--;
 			};
 		};
