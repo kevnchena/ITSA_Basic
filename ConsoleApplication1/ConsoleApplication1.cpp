@@ -11,7 +11,7 @@ int main()
 	string input;
 	string output[127];
 	getline(cin, input);//可以讀spacebar
-	transform(input.begin(), input.end(), input.begin(), tolower);
+	transform(input.begin(), input.end(), input.begin(),::tolower);//::tolower不然會編譯失敗
 	int input_len = input.size();
 	
 	for (int i = 0; i < input_len; i++) {//input長度為外迴圈容量
