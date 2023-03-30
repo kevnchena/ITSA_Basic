@@ -2,31 +2,35 @@
 #include<sstream>
 #include<string>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 int main()
 {	
 	string a = "~!@#$%^&*()_++`1234567890-=={}||qwertyuiop[]\\:""asdffghjkl;''<>??zxcvbnm,.//";
 	int a_len = a.size();
-	cout << a.size();
 	
 	string input;
-	vector<string>output = {};
-
+	string output[127];
 	getline(cin, input);
+	transform(input.begin(), input.end(), input.begin(), tolower);
 	int input_len = input.size();
 	
 	for (int i = 0; i < input_len; i++) {
-		if (input[i] == ' ')break;
 
 		for (int j = 0; j < a_len; j++) {
-			if (input[i] == a[j])
-				output[i].push_back(a[j + 1]);
-				
+			if (input[i] == ' ') {
+				output[i] = ' ';
+				break;
+			}
+			else if (input[i] == a[j]) {
+				output[i] = a[j + 1];
+				break;
+			};
 		};
-
+		cout << output[i];
 	};
-	for (auto&& i:output) { cout << i; };
+
 	cout << endl;
 	return 0;
 }
