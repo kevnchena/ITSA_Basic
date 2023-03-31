@@ -1,5 +1,4 @@
 ﻿#include<iostream>
-#include<map>
 
 using namespace std;
 
@@ -14,9 +13,9 @@ int main()
 
 		cin >> s >> d;
 
-		for (int j = s; j < d; j++) {
+		for (int j = s; j < d; j++) {//只增加s~d的範圍
 			time[j]++;
-			if (time[j] > cars)cars = time[j];
+			if (time[j] > cars)cars = time[j];//看時間有沒有重複
 		};
 
 	}
