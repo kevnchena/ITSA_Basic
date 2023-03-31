@@ -1,28 +1,25 @@
 ﻿#include<iostream>
 #include<map>
-#include<sstream>
+
 using namespace std;
 
 int main()
 {
-	int n;
-	int i = 0;
-	map<int, int> time;
-	
-	cin >> n;
-	cin.get();//吸收最後輸入的enter鍵
-	string input_time,sort;
-	getline(cin, input_time);
-	stringstream ss(input_time);
+	int order,s,d;
+	int time[25] = {0};
+	int cars=0;
+	cin >> order;
 
+	for (int i = 0; i < order; i++) {//用for迴圈後s,d是分段輸入的
 
-	while (getline(ss, sort, ' ')) {
-		
-		if (i < n) {
-			time[i]
-			time[i] = input_time[i] + input_time[i + 2];
-			i++;
+		cin >> s >> d;
+
+		for (int j = s; j < d; j++) {
+			time[j]++;
+			if (time[j] > cars)cars = time[j];
 		};
+
 	}
-	
+	cout << cars << endl;
+	return 0;
 }
