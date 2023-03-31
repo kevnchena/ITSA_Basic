@@ -16,9 +16,9 @@
 
 ### 輸入範例
 
-### 輸出範例
-
 How do you do
+
+### 輸出範例
 
 how do you
 
