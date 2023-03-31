@@ -58,7 +58,7 @@ int main()
 	int count=0;
 	if (input.length() < 128 && input2.length() < 512) {
 
-		while ((pos = input2.find(input, pos)) != string::npos)
+		while ((pos = input2.find(input, pos)) != string::npos)//這個條件式中string::npos是會等於0(false),所以如果有找到才會開始執行
 		{//        被檢查的字串.find(想找的字串,第幾個開始)!=string::no position
 			pos++;
 			count++;
