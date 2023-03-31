@@ -24,7 +24,7 @@ int main()
 	/*int length = str.length();
 	int pos = 0;
 	
-	str1.find(str2.c_str(), pos, length) != string::npos ?
+	str.find(str2.c_str(), pos, length) != string::npos ?//str.find(要找的字,begin,end)
 		cout << length << " chars match from pos " << pos << endl :
 		cout << "no match!" << endl;*/
 
@@ -32,8 +32,8 @@ int main()
 	string flag;
 	string::size_type pos;
 
-	flag = "e";
-	pos = 0;
+	flag = "e";//要找的字
+	pos = 0;//string.find()要使用的特規
 	int i = 1;
 	while ((pos = s.find(flag,pos))!= string::npos){
 	 cout << "position  " << i << " : " << pos << endl;
