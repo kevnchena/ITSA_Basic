@@ -46,12 +46,13 @@ int main()
 
 	string input, sort, output;
 	vector<string> container;
+	
 	getline(cin, input);
-	transform(input.begin(), input.end(), input.begin(), ::tolower);
+	transform(input.begin(), input.end(), input.begin(), ::tolower);//大小寫轉換
 
 	string checked(input);
 
-	istringstream str(checked);
+	istringstream str(checked);//分割輸入前的轉換準備
 
 
 
@@ -59,29 +60,29 @@ int main()
 		container.push_back(sort);
 	}
 
-	int limiter = container.size();
+	int limiter = container.size();//執行次數的極限
 	int count = container.size() - 1;//計算要幾個空白 尾巴-1
-	int flag = 0;
+	int flag = 0;//輸出使用
 
 	for (int i = 0; i < limiter; i++) 
 	{
 
 
-		for (int j = i + 1; j < limiter; j++)//比較元素有沒有相等
+		for (int j = i + 1; j < limiter; j++)//比較元素有沒有相等，i對j
 		{
-			if (container[i] == container[j] && !container[j].empty()) 
-			{
-
+			if (container[i] == container[j] && !container[j].empty()) //加一個empty讓count不會多扣一次
+			{							   //因為clear只是把裡面存的元素刪掉而已，沒有釋放記憶體
+										   //後面如果空白對空白會多數一次
 				container[j].clear();//有就把j當下的刪除
 				count--;
 			};
 		};
 
 	};
-	for (int k = 0; k < limiter; k++) 
+	for (int k = 0; k < limiter; k++) //輸出
 	{
 		if (!container[k].empty()) {
-			flag++;
+			flag++;//計算輸出幾次字串
 			cout << container[k];//如果comtaimer[i]內值不空
 			if (flag <= count)cout << " ";//k<=計算次數就不再輸出空白
 		};
