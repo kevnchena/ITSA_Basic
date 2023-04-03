@@ -24,25 +24,18 @@ string stack(const string& num1, const string& num2) {
 	stringstream ss;
 
 	for (int i = 0; i < 35; i++) {
-		if (i < num1_len)n1[35-i] = num1[num1_len - 1 - i] - '0';
-		if (i < num2_len)n2[35-i] = num2[num2_len - 1 - i] - '0';
+		if (i < num1_len)n1[34 - i] = num1[num1_len - 1 - i] - '0';
+		if (i < num2_len)n2[34 - i] = num2[num2_len - 1 - i] - '0';
 
-		if ((n1[35-i] + n2[35-i]) >= 10) {
-			sum[i + 1] += 1;
-			sum[i] += n1[i] - 10 + n2[i];
-		}
-		else {
-			sum[i] = n1[i] + n2[i];
-		};
-
-		
-
+		sum[i] = n1[34 - i] + n2[34 - i];
 	};
-	
 
-
-
-
+	for (int j = 0; j < 35; j++) {
+		if (sum[j] >= 10) {
+			sum[j] -= 10;
+			sum[j + 1]++;
+		};
+	};
 	return "0";
 }
 
