@@ -15,7 +15,7 @@ void compare(string &num1, string &num2) {
 	
 }
 
-string stack(const string& num1, const string& num2) {
+string plus_stacks(const string& num1, const string& num2) {
 	int n1[35] = { 0 };
 	int n2[35] = { 0 };
 	int sum[35] = { 0 };
@@ -36,7 +36,19 @@ string stack(const string& num1, const string& num2) {
 			sum[j + 1]++;
 		};
 	};
-	return "0";
+
+	bool leading_zeros = true;
+	for (int k = 34; k >= 0; k--) {
+		if (leading_zeros == 1 && sum[k] == 0) {
+			continue;
+		}
+		leading_zeros = false;
+		ss << sum[k];
+	}
+
+	string result = ss.str();
+	
+	return result;
 }
 
 int main()
@@ -49,7 +61,8 @@ int main()
 		cin >> num2;
 		compare(num1, num2);
 		//int change = atoi(num1[2]);
-		cout << stoi(num1);
-		stack(num1, num2);
+		cout << stoi(num1)<<endl;
+		cout<<plus_stacks(num1, num2);
+
 	};
 }
