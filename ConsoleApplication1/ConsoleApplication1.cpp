@@ -1,6 +1,5 @@
 ﻿#include<iostream>
 #include<string>
-#include <cstdlib>
 #include<sstream>
 using namespace std;
 
@@ -15,7 +14,7 @@ void compare(string &num1, string &num2) {
 	
 }
 
-string plus_stacks(const string& num1, const string& num2) {
+string plus_stacks(const string& num1, const string& num2) {//加法
 	int n1[35] = { 0 };
 	int n2[35] = { 0 };
 	int sum[35] = { 0 };//計算總和使用
@@ -54,13 +53,14 @@ string plus_stacks(const string& num1, const string& num2) {
 int main()
 {
 	int n;
-
-	while (cin >> n) {
-		string num1, num2;
-		cin >> num1;
-		cin >> num2;
-		compare(num1, num2);
-		cout<<plus_stacks(num1, num2);
-
+	cin >> n;
+	string sum;
+	for (int i = 0; i < n;i++) {
+		string num1,num2;
+		cin >> num1 >> num2;
+		compare(num1,num2);
+		cout<<plus_stacks(num1, num2)<<endl;
+	
+		
 	};
 }
