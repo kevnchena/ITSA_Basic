@@ -1,21 +1,17 @@
-﻿#include<iostream>
-#include<bitset>
+﻿#include <iostream>
+
 using namespace std;
-
-
 
 int main()
 {
-	float r,n,p;
-	float sum = 0.0;
-	cin >> r >> n >> p;
-	r += 1.0;
-	cout << endl;
-	for (int i = 1; i <= n; i++) {
-
-		sum =(sum+ p) * r;
-	}
-	cout << (long long)sum << endl;
-
-	return 0;
+    long double r, n, p;
+    while (cin >> r >> n >> p) {
+        double ans = 0.0;
+        r += 1.0;
+        for (int i = 0; i < n; ++i) {
+            ans = (ans + p) * r;
+        }
+        cout << (long long)ans << endl;
+    }
+    return 0;
 }
