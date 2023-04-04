@@ -5,9 +5,9 @@ using namespace std;
 int main()
 {
 	int board[3][3];
+	int flag;//用來計算比對幾次
 
-	int flag;
-	bool compare=false;
+	bool compare=false;//勝負固定術
 	for (int i = 0; i < 3; i++) {
 
 		for (int j = 0; j < 3; j++) {
@@ -37,14 +37,14 @@ int main()
 
 	for (int i=0; i < 2; i++) {//左上到右下
 		
-		if (board[i][i] == board[i + 1][i + 1])flag++;
+		if (board[i][i] == board[i + 1][i + 1])flag++;//[0][0],[1][1],[2][2]
 		if (flag == 2)compare = true;
 	}
 
 	flag = 0;
 	
 	for (int i=0; i < 2; i++) {//右下到左上
-		if (board[2 - i][i] == board[1 - i][i+1])flag++;
+		if (board[2 - i][i] == board[1 - i][i+1])flag++;//[2][0],[1][1],[0][2] [遞減][遞增]
 		if (flag == 2)compare = true;
 	}
 
