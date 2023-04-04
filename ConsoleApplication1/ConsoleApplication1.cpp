@@ -12,7 +12,7 @@ int main()
 
         sum = (sum + p) * r;//(前面+本次存款)*利率
     }
-    cout << (long long)sum << endl;//longlong可以忽略掉小數點
+    cout << (long long)sum << endl;//longlong強制轉換增加精度
 
     return 0;
 }
