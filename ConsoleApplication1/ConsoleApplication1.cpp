@@ -10,7 +10,7 @@ int main()
     for (int i = 0; i < 10; i++) {
         cin >> a[i];
     }
-    max = a[0];
+    max = a[0];//先訂min max的底
     min = a[0];
    for (int i = 0; i < 10; i++) {
         if (a[i] > max)max = a[i];
