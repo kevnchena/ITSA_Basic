@@ -20,7 +20,7 @@ I had a dog
 
 Sample Output:
 
-4
+4  
 a : 2  
 d : 2  
 g : 1  
