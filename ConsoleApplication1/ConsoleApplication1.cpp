@@ -1,39 +1,53 @@
 ﻿#include<iostream>
-#include<sstream>
+
+
 using namespace std;
-void sort(int c[], int& m);
+void swap(int& a, int& b) {
+	int temp;
+
+	temp = a;
+	a = b;
+	b = temp;
+}
+
+int value(int a) {
+	int sum = 0;
+	do 
+	{
+		sum += a % 10;
+	} while (a /= 10);
+	return sum;
+}
 int main()
 {
-	int in = 0;
-	cin >> in;
-	int ar[in];//太早設導致"ar[0]"，衍伸"無效記憶體引用" 
-	for (int i = 0; i < in; i++) { cin >> ar[i]; }
-	sort(ar, in);
-	for (int i = in - 1; i >= 0; i--) { if (i == 0) { cout << ar[i] << endl; } else cout << ar[i] << " "; }
-	return 0;
-}
-void sort(int c[], int& m)
-{
-	int b[m], a = 0;
-	for (int j = 0; j < m; j++)//依序求出總和值 
-	{
-		b[j] = 0; a = c[j];
-		while (a > 0)
-		{
-			b[j] += a % 10;
-			a /= 10;
-		}
+	int n;
+	int answer[10] = { 0 };
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> answer[i];
 	}
-	for (int i = 0; i < m; i++)//泡泡排序
+	for (int i = 0; i < n - 1; i++)
 	{
-		for (int j = 0; j < m; j++)
+		for (int j = i + 1; j < n; j++)
 		{
-			if (b[i] > b[j] || (b[i] == b[j] && c[i] > c[j]))
+
+			if (value(answer[i]) > value(answer[j]))
 			{
-				int tc = 0, tb = 0;
-				tb = b[i]; b[i] = b[j]; b[j] = tb;
-				tc = c[i]; c[i] = c[j]; c[j] = tc;
+				swap(answer[i], answer[j]);
+			}
+			else if (value(answer[i]) == value(answer[j]))
+			{
+				if (answer[i] > answer[j])
+				{
+					swap(answer[i], answer[j]);
+				}
 			}
 		}
 	}
+
+	for (int i = 0; i < n; i++) {
+		if (i != n)cout << answer[i] << " ";
+		else cout << endl;
+	}
+	return 0;
 }
