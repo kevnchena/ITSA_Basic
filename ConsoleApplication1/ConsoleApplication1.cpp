@@ -6,7 +6,8 @@ int main()
 	string special, jp1, jp2, jp3;
 	int n, c;
 	string ticket;
-	int hit[7] = { 0 };
+	int hit[7] = { 0 };//各獎項中獎次數
+	int prize[9] = { 0 };//獎項 0是特別獎 1,2,3是頭獎，所以才會多兩個
 	int sum = 0;
 	cin >> special >> jp1 >> jp2 >> jp3;
 	cin >> n;
@@ -14,9 +15,19 @@ int main()
 		cin >> ticket;
 		
 		do {
-			if (ticket[c] == special[c] || ticket[c] = jp1[c]);
-
-
+			if (ticket[c] == special[c]) {
+				hit[0]++;
+			}
+			else if (ticket[c] == jp1[c]) {
+				hit[1]++;
+			}
+			else if (ticket[c] == jp2[c]) {
+				hit[2]++;
+			}
+			else if (ticket[c] == jp3[c]) {
+				hit[3]++;
+			}
+			c--;
 		} while (c != 0);
 	}
 
