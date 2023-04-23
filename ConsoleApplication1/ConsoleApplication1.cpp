@@ -6,8 +6,8 @@ int main()
 	string special, jp1, jp2, jp3;
 	int n, c;
 	string ticket;
-	int hit[7] = { 0 };//各獎項中獎次數
-	int prize[9] = { 0 };//獎項 0是特別獎 1,2,3是頭獎，所以才會多兩個
+	int hit[9] = { 0 };//各獎項中獎次數0是特別獎 1,2,3是頭獎，所以才會多兩個
+	int prize[7] = { 0 };//獎項
 	int sum = 0;
 	cin >> special >> jp1 >> jp2 >> jp3;
 	cin >> n;
@@ -29,6 +29,8 @@ int main()
 			}
 			c--;
 		} while (c != 0);
+		
+		for(int i=0;)
 	}
 
 
