@@ -33,7 +33,7 @@ int main()
 		if (hit[0] == 8)prize[0]++;
 		
 			for (int i =0 ; i <=7 ; i++) {
-				if (hit[1] == i + 3)prize[7-1-i]++;
+				if (hit[1] == i + 3|| hit[2] == i + 3|| hit[3] == i + 3)prize[7-1-i]++;
 		}
 			for (int i = 0; i < 7; i++) {
 				cout << prize[i];
