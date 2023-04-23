@@ -11,8 +11,9 @@ int main(){
 	cin.ignore();
 
 	for (int i = 0; i < n; i++) {
-		getline(cin,str);
-		for (int j = str.length() - 1; j>=0; j--) {
+		cin.width(32);
+		getline(cin, str);
+		for (int j = 0; j< str.length(); j++) {
 			sum += int(str[j]);
 			
 		}
