@@ -2,7 +2,7 @@
 
 
 using namespace std;
-void swap(int& a, int& b) {
+void swap(int& a, int& b) {//排列
 	int temp;
 
 	temp = a;
@@ -10,7 +10,7 @@ void swap(int& a, int& b) {
 	b = temp;
 }
 
-int value(int a) {
+int value(int a) {//計算各個值
 	int sum = 0;
 	do 
 	{
@@ -31,13 +31,13 @@ int main()
 		for (int j = i + 1; j < n; j++)
 		{
 
-			if (value(answer[i]) > value(answer[j]))
+			if (value(answer[i]) > value(answer[j]))//比加總的值
 			{
 				swap(answer[i], answer[j]);
 			}
-			else if (value(answer[i]) == value(answer[j]))
+			else if (value(answer[i]) == value(answer[j]))//如果加總值相等
 			{
-				if (answer[i] > answer[j])
+				if (answer[i] > answer[j])//比原始值
 				{
 					swap(answer[i], answer[j]);
 				}
