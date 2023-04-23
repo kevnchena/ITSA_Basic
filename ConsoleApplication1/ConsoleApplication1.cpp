@@ -46,7 +46,8 @@ int main()
 	}
 
 	for (int i = 0; i < n; i++) {
-		if (i != n)cout << answer[i] << " ";
+		cout << answer[i];
+		if (i < n-1)cout<< " ";
 		else cout << endl;
 	}
 	return 0;
