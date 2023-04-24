@@ -1,68 +1,133 @@
-﻿#include<iostream>
+﻿#include <iostream>  
+#include <string.h>    
+#include <cmath>    
+#include <algorithm>  
 using namespace std;
 
-void check(string a, string b,int hit[],int n) {
-	int c = 8;
-	do {
-
-		if (a[c-1] == b[c-1]) {
-			hit[n]++;
-		}
-		else break;
-
-		c--;
-	} while (c!=0);
-	
-}
-
-
-int main()
-{
-	string special, jp1, jp2, jp3;
-	int n;
-	string ticket;
-	int hit[3] = { 0 };//各獎項中獎次數 0是特別獎 1,2,3是頭獎，所以才會多兩個
-	int prize[7] = { 0 };//獎項
-	int sum = 0;
-	cin >> special >> jp1 >> jp2 >> jp3;
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		cin >> ticket;
-		
-		if (ticket == special) {
-			prize[0]++;
-			break;
-		}
-
-		else {
-
-			check(ticket, jp1, hit, 0);
-			check(ticket, jp2, hit, 1);
-			check(ticket, jp3, hit, 2);
-		}
-		
-		if (hit[0] >= hit[1] && hit[1] >= hit[2])prize[6- hit[0]+3]++;
-		else if (hit[1] >= hit[0] && hit[0] >= hit[2])prize[6 - hit[1]+3]++;
-		else if (hit[2] >= hit[0] && hit[0] >= hit[1])prize[6 - hit[2]+3]++;
-		hit[0] = { 0 };
-		hit[1] = { 0 };
-		hit[2] = { 0 };
-	}
-			
-	
-	
-	
-	for (int i = 0; i < 7; i++) {
-				cout << prize[i];
-				if (i != 6)cout << ' ';
-			}
-			cout << endl;
-			sum += prize[0] * 2000000 + prize[1] * 200000 + prize[2] * 40000 + prize[3] * 10000 +
-				prize[4] * 4000 + prize[5] * 1000 + prize[6] * 200;
-			cout << sum;
-	
-
-
-
-
+int main() {
+    // 題目28. 統一發票對獎  
+    string J;//頭獎  
+    string s1, s2, s3;//特獎  
+    cin >> J >> s1 >> s2 >> s3;
+    int count[7];//數量計算  
+    fill(count, count + 7, 0);
+    long int money = 0;//總金額  
+    int m[6] = { 200000, 40000, 10000, 4000, 1000, 200 };
+    int N;//發票數量  
+    int c = 0;//中幾碼  
+    cin >> N;
+    int mm = 0;//目前的最高金額  
+    for (int i = 0; i < N; i++)
+    {
+        string num;
+        cin >> num;
+        if (num == J)//中頭獎，其他就不用對了  
+        {
+            money = money + 2000000;
+            count[0]++;
+        }
+        else
+        {
+            for (int b = 0; b < 3; b++)
+            {
+                if (b == 0)//對第一個特獎  
+                {
+                    for (int j = 7; j >= 0; j--)
+                    {
+                        if (s1[j] == num[j])//計算中幾碼  
+                        {
+                            c++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    for (int j = 8; j >= 3; j--)//對幾碼相對應的錢  
+                    {
+                        if (c == j)
+                        {
+                            if (m[8 - j] > mm)
+                            {
+                                mm = m[8 - c];
+                            }
+                        }
+                    }
+                    c = 0;
+                }
+                else if (b == 1)//對第二個特獎  
+                {
+                    for (int j = 7; j >= 0; j--)
+                    {
+                        if (s2[j] == num[j])//計算中幾碼  
+                        {
+                            c++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    for (int j = 8; j >= 3; j--)//對幾碼相對應的錢  
+                    {
+                        if (c == j)
+                        {
+                            if (m[8 - c] > mm)
+                            {
+                                mm = m[8 - c];
+                            }
+                        }
+                    }
+                    c = 0;
+                }
+                else if (b == 2)//對第三個特獎  
+                {
+                    for (int j = 7; j >= 0; j--)
+                    {
+                        if (s3[j] == num[j])//計算中幾碼  
+                        {
+                            c++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    for (int j = 8; j >= 3; j--)//對幾碼相對應的錢  
+                    {
+                        if (c == j)
+                        {
+                            if (m[8 - c] > mm)
+                            {
+                                mm = m[8 - c];
+                            }
+                        }
+                    }
+                    c = 0;
+                }
+            }
+            for (int j = 0; j < 7; j++)//三個特獎中，最高獎金的數量加一  
+            {
+                if (mm == m[j])
+                {
+                    count[j + 1]++;
+                }
+            }
+            money = money + mm;
+            mm = 0;
+        }
+    }
+    //輸出  
+    for (int i = 0; i < 7; i++)
+    {
+        if (i != 6)
+        {
+            cout << count[i] << " ";
+        }
+        else
+        {
+            cout << count[i] << endl;
+        }
+    }
+    cout << money << endl;
 }
