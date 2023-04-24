@@ -1,8 +1,8 @@
 ﻿#include<iostream>
 using namespace std;
 
-void check(string a, string b,int hit[],int n) {
-	int c = 8;
+void check(string a, string b,int hit[],int n) {//
+	int c = 8;//多1因為c==0會結束
 	do {
 
 		if (a[c-1] == b[c-1]) {
@@ -26,6 +26,7 @@ int main()
 	int sum = 0;//最後價格
 	cin >> special >> jp1 >> jp2 >> jp3;
 	cin >> n;//發票數量
+	
 	for (int i = 0; i < n; i++) {
 		cin >> ticket;
 		
@@ -36,7 +37,7 @@ int main()
 
 		else {
 
-			check(ticket, jp1, hit, 0);
+			check(ticket, jp1, hit, 0);//對發票
 			check(ticket, jp2, hit, 1);
 			check(ticket, jp3, hit, 2);
 		}
@@ -50,9 +51,7 @@ int main()
 	}
 			
 	
-	
-	
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 7; i++) {//輸出
 				cout << prize[i];
 				if (i != 6)cout << ' ';
 			}
