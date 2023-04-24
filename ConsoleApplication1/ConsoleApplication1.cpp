@@ -1,12 +1,27 @@
 ﻿#include<iostream>
 using namespace std;
 
+void check(string a, string b,int hit[],int n) {
+	int c = 8;
+	do {
+
+		if (a[c-1] == b[c-1]) {
+			hit[n]++;
+		}
+		else break;
+
+		c--;
+	} while (c!=0);
+	
+}
+
+
 int main()
 {
 	string special, jp1, jp2, jp3;
-	int n, c=7;
+	int n;
 	string ticket;
-	int hit[4] = { 0 };//各獎項中獎次數 0是特別獎 1,2,3是頭獎，所以才會多兩個
+	int hit[3] = { 0 };//各獎項中獎次數 0是特別獎 1,2,3是頭獎，所以才會多兩個
 	int prize[7] = { 0 };//獎項
 	int sum = 0;
 	cin >> special >> jp1 >> jp2 >> jp3;
@@ -14,28 +29,30 @@ int main()
 	for (int i = 0; i < n; i++) {
 		cin >> ticket;
 		
-		do {
-			if (ticket[c] == special[c]) {
-				hit[0]++;
-			}
-			else if (ticket[c] == jp1[c]) {
-				hit[1]++;
-			}
-			else if (ticket[c] == jp2[c]) {
-				hit[2]++;
-			}
-			else if (ticket[c] == jp3[c]) {
-				hit[3]++;
-			}
-			c--;
-		} while (c != 0);
-
-		if (hit[0] == 8)prize[0]++;
-		
-			for (int i =0 ; i <=7 ; i++) {
-				if (hit[1] == i + 3|| hit[2] == i + 3|| hit[3] == i + 3)prize[7-1-i]++;
+		if (ticket == special) {
+			prize[0]++;
+			break;
 		}
-			for (int i = 0; i < 7; i++) {
+
+		else {
+
+			check(ticket, jp1, hit, 0);
+			check(ticket, jp2, hit, 1);
+			check(ticket, jp3, hit, 2);
+		}
+		
+		if (hit[0] >= hit[1] && hit[1] >= hit[2])prize[6- hit[0]+3]++;
+		else if (hit[1] >= hit[0] && hit[0] >= hit[2])prize[6 - hit[1]+3]++;
+		else if (hit[2] >= hit[0] && hit[0] >= hit[1])prize[6 - hit[2]+3]++;
+		hit[0] = { 0 };
+		hit[1] = { 0 };
+		hit[2] = { 0 };
+	}
+			
+	
+	
+	
+	for (int i = 0; i < 7; i++) {
 				cout << prize[i];
 				if (i != 6)cout << ' ';
 			}
@@ -43,7 +60,7 @@ int main()
 			sum += prize[0] * 2000000 + prize[1] * 200000 + prize[2] * 40000 + prize[3] * 10000 +
 				prize[4] * 4000 + prize[5] * 1000 + prize[6] * 200;
 			cout << sum;
-	}
+	
 
 
 
