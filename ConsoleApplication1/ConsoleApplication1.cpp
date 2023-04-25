@@ -29,7 +29,7 @@ int main()
 	}
 	
 	//判斷
-	if(input[0]-'A' < 0 || input[0] - 'Z' > 0||input.length()>10)cout << "WRONG!!!" << endl;
+	if(input[0]-'A' < 0 || input[0] - 'Z' > 0||input.length()>10)cout << "WRONG!!!" << endl;//設限範圍A~Z和輸入不能超過
 	else if (sum % 10 == 0)cout << "CORRECT!!!"<<endl;
 	else cout << "WRONG!!!"<<endl;
 
